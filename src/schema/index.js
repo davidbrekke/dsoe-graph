@@ -103,9 +103,7 @@ const typeDefs = gql`
     users: [User]
     user(user_id: ID!, email: String): User
     courses: [Course]
-    course(courseId: Int, courseCode: String): Course
-    programs: [Program]
-    program(programId: Int): Program
+    course(course_id: ID!): Course
   }
   #/* ---------------------- MUTATIONS --------------------- */
   type Mutation {

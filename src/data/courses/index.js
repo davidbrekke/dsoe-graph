@@ -21,12 +21,13 @@ const register = async ({ sql, getConnection, closePool }) => {
       return results;
     }
   };
-  const getCourse = async () => {
+  const getCourse = async ({ course_id }) => {
     /*
      * TODO: getCourse SQL
      */
     await getConnection();
     const request = new sql.Request();
+    request.input('course_id', course_id);
     const results = await request.query(sqlQueries.getCourse);
     if (results) {
       closePool();
