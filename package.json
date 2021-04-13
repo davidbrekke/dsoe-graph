@@ -1,0 +1,27 @@
+{
+  "name": "dsoe-graph",
+  "version": "0.0.0",
+  "description": "dunwoody school of engineering graphql data graph server",
+  "main": "src/index.js",
+  "author": "david magnuson",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon .",
+    "prod": "node ."
+  },
+  "dependencies": {
+    "apollo-server": "^2.21.0",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.1.0",
+    "graphql": "^15.5.0",
+    "mssql": "^6.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  }
+}
