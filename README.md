@@ -12,7 +12,7 @@ GraphQL API built with Apollo Server to support the school of engineering with s
 install dependencies
 : `yarn`
 
-❗️ create a .env file from .env-sample template, dont forget to add YOUR info!
+❗️ create a .env file from .env-sample template, dont forget to add _YOUR_ info!
 
 ### scripts
 
