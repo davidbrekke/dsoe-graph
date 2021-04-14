@@ -2,7 +2,7 @@
 
 # Dunwoody School of Engineering
 
-GraphQL API built with Apollo Server to support the school of engineering with student advising and academic planning
+GraphQL API built with apollo to support the school of engineering with student advising and academic planning
 
 ### getting started
 
