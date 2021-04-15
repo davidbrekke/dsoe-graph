@@ -7,11 +7,18 @@ assignees: ''
 
 ---
 
-## file needed
-- put path to where file should be located & name of file
+> ## query description
+>  describe the query that is needed
+>
 
-### inputs
-- put all variable inputs needed
+> ### file needed
+> put path to where file should be located & name of file
+>
 
-### outputs
-- put all fields needed from the query
+> ### inputs
+> - put all variable inputs needed
+> 
+
+> ### outputs
+> - put all fields needed from the query
+>
