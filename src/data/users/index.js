@@ -39,13 +39,23 @@ const register = async ({ sql, getConnection, closePool }) => {
     }
   };
 
+  const getUserByAzureToken = async (azure_token) => {
+    await getConnection();
+    const request = new sql.Request();
+    request.input('azure_token', azure_token);
+    const results = await request.query(sqlQueries.getUserByAzureToken);
+    if (results) {
+      closePool();
+      return results;
+    }
+  };
+
   const createUser = async ({
     first_name,
     last_name,
     email,
     is_admin,
-    date_added,
-    inserted_by,
+    azure_token,
   }) => {
     /*
      * TODO: createUser SQL
@@ -56,8 +66,7 @@ const register = async ({ sql, getConnection, closePool }) => {
     request.input('last_name', last_name);
     request.input('email', email);
     request.input('is_admin', is_admin);
-    request.input('date_added', date_added);
-    request.input('inserted_by', inserted_by);
+    request.input('azure_token', azure_token);
     const results = await request.query(sqlQueries.createUser);
     if (results) {
       closePool();
@@ -126,6 +135,7 @@ const register = async ({ sql, getConnection, closePool }) => {
   return {
     getUsers,
     getUser,
+    getUserByAzureToken,
     createUser,
     updateUser,
     deleteUser,

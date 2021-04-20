@@ -5,22 +5,22 @@ const { gql } = require('apollo-server');
 const typeDefs = gql`
   #/* ---------------------- TYPES --------------------- */
   type User {
-    user_id: ID!
-    advisor_id: ID
+    user_id: String!
+    advisor_id: String
     first_name: String
     last_name: String
     email: String
-    password: String
+    azure_token: String
     is_admin: Boolean
     date_added: String
     date_modified: String
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   type Course {
-    course_id: ID!
+    course_id: String!
     course_code: String
     credits: Int
     prerequisite_id: Int
@@ -36,20 +36,20 @@ const typeDefs = gql`
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   type Program {
-    program_id: ID!
+    program_id: String!
     program_code: String
     program_name: String
     program_description: String
     program_credits: Int
-    comment_set_id: ID
+    comment_set_id: String
   }
   type Class {
-    class_id: ID!
-    course_id: ID!
-    spec_term_id: ID!
+    class_id: String!
+    course_id: String!
+    spec_term_id: String!
     start_date: String
     end_date: String
     specificTerm: SpecificTerm
@@ -60,11 +60,11 @@ const typeDefs = gql`
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   type SpecificTerm {
-    spec_term_id: ID!
-    general_term_id: ID!
+    spec_term_id: String!
+    general_term_id: String!
     year: Int
     credits: Int
     date_added: String
@@ -72,10 +72,10 @@ const typeDefs = gql`
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   type Term {
-    term_id: ID!
+    term_id: String!
     season: String
     class_level: String
     date_added: String
@@ -83,12 +83,12 @@ const typeDefs = gql`
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   type AcademicPlan {
-    plan_id: ID!
-    user_id: ID
-    plan_parent: String
+    plan_id: String!
+    user: User
+    plan_parent: AcademicPlan
     established_date: String
     closed_date: String
     date_added: String
@@ -96,12 +96,13 @@ const typeDefs = gql`
     date_deleted: String
     inserted_by: String
     updated_by: String
-    comment_set_id: ID
+    comment_set_id: String
   }
   #/* ---------------------- QUERIES --------------------- */
   type Query {
     users: [User]
-    user(user_id: ID!, email: String): User
+    user(user_id: ID!): User
+    userAzureToken(azure_token: String!): User
     courses: [Course]
     course(course_id: ID!): Course
   }
@@ -109,15 +110,11 @@ const typeDefs = gql`
   type Mutation {
     #/* ------------ users ----------- */
     createUser(
-      advisorId: Int
-      first: String
-      last: String
+      first_name: String
+      last_name: String
       email: String
-      password: String
-      isAdmin: Boolean
-      dateAdded: Int
-      lastModified: Int
-      dateDeleted: Int
+      azure_token: String
+      is_admin: Boolean
     ): User
     updateUser(
       userId: Int
