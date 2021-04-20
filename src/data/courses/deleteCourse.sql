@@ -1,0 +1,1 @@
+DELETE FROM advising.COURSE_TBL WHERE course_id = @course_id;
