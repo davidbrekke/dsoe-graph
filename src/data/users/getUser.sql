@@ -1,0 +1,2 @@
+SELECT a.advisor_id, b.role_name, a.first_name, a.last_name, a.email, a.user_password, a.is_admin, a.date_added, a.last_modified, a.date_deleted, a.inserted_by, a.updated_by
+FROM advising.USER_TBL a LEFT JOIN advising.ROLE_TBL b on a.role_id = b.role_id WHERE a.user_id = @user_id;
