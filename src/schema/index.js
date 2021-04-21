@@ -147,7 +147,7 @@ const typeDefs = gql`
       category: String
       subCategory: String
     ): Course
-    deleteCourse(courseId: Int): Course
+    deleteCourse(course_id: String!): Course
   }
 `;
 

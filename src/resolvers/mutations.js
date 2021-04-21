@@ -21,6 +21,16 @@ const mutations = {
       console.log(err);
     }
   },
+  deleteCourse: async (parent, { course_id }, { db }) => {
+    try {
+      const response = await db.courses.deleteCourse(course_id);
+      console.log(`📤 MUTATION: deleteCourse -> ${course_id}`);
+
+      return response.recordset;
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
 
 module.exports = mutations;

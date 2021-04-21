@@ -80,12 +80,7 @@ const register = async ({ sql, getConnection, closePool }) => {
       return results;
     }
   };
-  const deleteCourse = async ({
-    /*
-     * TODO: deleteCourse SQL
-     */
-    course_id,
-  }) => {
+  const deleteCourse = async (course_id) => {
     await getConnection();
     const request = new sql.Request();
     request.input('course_id', course_id);
