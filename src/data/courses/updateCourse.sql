@@ -1,0 +1,2 @@
+UPDATE advising.COURSE_TBL SET course_title = @course_title, course_code = @course_code,
+credits = @credits, course_description = @course_description, required = @required WHERE course_id = @course_id;
