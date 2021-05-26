@@ -1,6 +1,10 @@
-'use strict';
+'use strict'
 
-const { gql } = require('apollo-server');
+/*
+// this is the graphql schema file which defines the data types to be expected 
+// three main graphql types: Type, Query and Mutation
+*/
+const { gql } = require('apollo-server')
 
 const typeDefs = gql`
   #/* ---------------------- TYPES --------------------- */
@@ -149,6 +153,6 @@ const typeDefs = gql`
     ): Course
     deleteCourse(course_id: String!): Course
   }
-`;
+`
 
-module.exports = typeDefs;
+module.exports = typeDefs

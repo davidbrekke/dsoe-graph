@@ -1,8 +1,11 @@
-'use strict';
+'use strict'
 
-const queries = require('./queries');
-const mutations = require('./mutations');
+// this file combines the query resolvers and mutation resolvers into a single 'resolvers' object
+// this is how apolloserver expects it
 
-const resolvers = { Query: queries, Mutation: mutations };
+const queries = require('./queries')
+const mutations = require('./mutations')
 
-module.exports = resolvers;
+const resolvers = { Query: queries, Mutation: mutations }
+
+module.exports = resolvers

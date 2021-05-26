@@ -21,7 +21,8 @@
   },
   "prettier": {
     "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true
   }
 }

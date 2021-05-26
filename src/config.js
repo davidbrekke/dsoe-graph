@@ -1,26 +1,26 @@
-'use strict';
+'use strict'
 
-const dotenv = require('dotenv');
-const assert = require('assert');
+// this is where all of our configuration variables are initialized
 
-dotenv.config();
+// this loads in the .env file and the environment variables
+const dotenv = require('dotenv')
+dotenv.config()
 
-const {
-  PORT,
-  HOST,
-  SQL_SERVER,
-  SQL_USER,
-  SQL_PASSWORD,
-  SQL_DATABASE,
-} = process.env;
+// library to help dev with what env vars are required
+const assert = require('assert')
 
-assert(PORT, 'PORT is required');
-assert(HOST, 'HOST is required');
-assert(SQL_SERVER, 'SQL_SERVER is required');
-assert(SQL_USER, 'SQL_USER is required');
-assert(SQL_PASSWORD, 'SQL_PASSWORD is required');
-assert(SQL_DATABASE, 'SQL_DATABASE is required');
+// destructuring the env vars for simpiler access
+const { PORT, HOST, SQL_SERVER, SQL_USER, SQL_PASSWORD, SQL_DATABASE } =
+  process.env
 
+assert(PORT, 'PORT is required')
+assert(HOST, 'HOST is required')
+assert(SQL_SERVER, 'SQL_SERVER is required')
+assert(SQL_USER, 'SQL_USER is required')
+assert(SQL_PASSWORD, 'SQL_PASSWORD is required')
+assert(SQL_DATABASE, 'SQL_DATABASE is required')
+
+// exporting the env vars as an object for simple access throughout the server
 module.exports = {
   port: PORT,
   host: HOST,
@@ -34,4 +34,4 @@ module.exports = {
       enableArithAbort: true,
     },
   },
-};
+}

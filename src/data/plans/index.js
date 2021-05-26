@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 /*
  * TODO:
@@ -9,35 +9,35 @@
  *       [] deletePlan SQL
  */
 
-const { loadSqlQueries } = require('../utils');
+const { loadSqlQueries } = require('../utils')
 
 const register = async ({ sql, getConnection, closePool }) => {
-  const sqlQueries = await loadSqlQueries('plans');
+  const sqlQueries = await loadSqlQueries('plans')
 
   const getPlans = async () => {
     /*
      * TODO: getPlans SQL
      */
-    await getConnection();
-    const request = new sql.Request();
-    const results = await request.query(sqlQueries.getPlans);
+    await getConnection()
+    const request = new sql.Request()
+    const results = await request.query(sqlQueries.getPlans)
     if (results) {
-      closePool();
-      return results;
+      closePool()
+      return results
     }
-  };
+  }
   const getPlan = async () => {
     /*
      * TODO: getPlan SQL
      */
-    await getConnection();
-    const request = new sql.Request();
-    const results = await request.query(sqlQueries.getPlan);
+    await getConnection()
+    const request = new sql.Request()
+    const results = await request.query(sqlQueries.getPlan)
     if (results) {
-      closePool();
-      return results;
+      closePool()
+      return results
     }
-  };
+  }
 
   const createPlan = async ({
     user_id,
@@ -49,19 +49,19 @@ const register = async ({ sql, getConnection, closePool }) => {
     /*
      * TODO: createPlan SQL
      */
-    await getConnection();
-    const request = new sql.Request();
-    request.input('user_id', user_id);
-    request.input('plan_parent', plan_parent);
-    request.input('established_date', established_date);
-    request.input('date_added', date_added);
-    request.input('inserted_by', inserted_by);
-    const results = await request.query(sqlQueries.createPlan);
+    await getConnection()
+    const request = new sql.Request()
+    request.input('user_id', user_id)
+    request.input('plan_parent', plan_parent)
+    request.input('established_date', established_date)
+    request.input('date_added', date_added)
+    request.input('inserted_by', inserted_by)
+    const results = await request.query(sqlQueries.createPlan)
     if (results) {
-      closePool();
-      return results;
+      closePool()
+      return results
     }
-  };
+  }
   const updatePlan = async ({
     user_id,
     plan_parent,
@@ -72,19 +72,19 @@ const register = async ({ sql, getConnection, closePool }) => {
     /*
      * TODO: updatePlan SQL
      */
-    await getConnection();
-    const request = new sql.Request();
-    request.input('user_id', user_id);
-    request.input('plan_parent', plan_parent);
-    request.input('established_date', established_date);
-    request.input('date_modified', date_modified);
-    request.input('updated_by', updated_by);
-    const results = await request.query(sqlQueries.updatePlan);
+    await getConnection()
+    const request = new sql.Request()
+    request.input('user_id', user_id)
+    request.input('plan_parent', plan_parent)
+    request.input('established_date', established_date)
+    request.input('date_modified', date_modified)
+    request.input('updated_by', updated_by)
+    const results = await request.query(sqlQueries.updatePlan)
     if (results) {
-      closePool();
-      return results;
+      closePool()
+      return results
     }
-  };
+  }
   const deletePlan = async ({
     user_id,
     date_modified,
@@ -94,20 +94,20 @@ const register = async ({ sql, getConnection, closePool }) => {
     /*
      * TODO: deletePlan SQL
      */
-    await getConnection();
-    const request = new sql.Request();
-    request.input('user_id', user_id);
-    request.input('date_modified', date_modified);
+    await getConnection()
+    const request = new sql.Request()
+    request.input('user_id', user_id)
+    request.input('date_modified', date_modified)
 
-    request.input('date_deleted', date_deleted);
-    request.input('updated_by', updated_by);
+    request.input('date_deleted', date_deleted)
+    request.input('updated_by', updated_by)
 
-    const results = await request.query(sqlQueries.deletePlan);
+    const results = await request.query(sqlQueries.deletePlan)
     if (results) {
-      closePool();
-      return results;
+      closePool()
+      return results
     }
-  };
+  }
 
   return {
     getPlans,
@@ -115,7 +115,7 @@ const register = async ({ sql, getConnection, closePool }) => {
     createPlan,
     updatePlan,
     deletePlan,
-  };
-};
+  }
+}
 
-module.exports = { register };
+module.exports = { register }
