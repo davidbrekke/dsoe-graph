@@ -1,9 +1,7 @@
 'use strict'
 
-/*
-// this is the graphql schema file which defines the data types to be expected 
+// this is the graphql schema file which defines the data types to be expected
 // three main graphql types: Type, Query and Mutation
-*/
 const { gql } = require('apollo-server')
 
 const typeDefs = gql`

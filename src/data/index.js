@@ -7,10 +7,8 @@ const courses = require('./courses')
 const users = require('./users')
 const plans = require('./plans')
 
-/*
-// dataClient is a function that takes a config and 
+// dataClient is a function that takes a config and
 // returns an object with
-*/
 const dataClient = async (config) => {
   let pool = null
 

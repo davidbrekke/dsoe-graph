@@ -3,11 +3,6 @@
 const server = require('./server') // server module
 const config = require('./config') // config module
 
-/* 
-// ( function )() <- this is a self invoking function
-// this is where the server begins
-*/
-
 ;(async () => {
   try {
     // creating an app instance by passing the config into the server

@@ -1,11 +1,11 @@
 'use strict'
 
-/*
- * TODO:
- *       [] getCourse SQL
- *       [] updateCourse SQL
- *       [] deleteCourse SQL
- */
+// /*
+//  * TODO:
+//  *       [] getCourse SQL
+//  *       [] updateCourse SQL
+//  *       [] deleteCourse SQL
+//  */
 
 const { loadSqlQueries } = require('../utils')
 
@@ -22,9 +22,9 @@ const register = async ({ sql, getConnection, closePool }) => {
     }
   }
   const getCourse = async (course_id) => {
-    /*
-     * TODO: getCourse SQL
-     */
+    // /*
+    //  * TODO: getCourse SQL
+    //  */
     await getConnection()
     const request = new sql.Request()
     request.input('course_id', course_id)
@@ -56,9 +56,9 @@ const register = async ({ sql, getConnection, closePool }) => {
     }
   }
   const updateCourse = async ({
-    /*
-     * TODO: updateCourse SQL
-     */
+    // /*
+    //  * TODO: updateCourse SQL
+    //  */
     course_id,
     course_title,
     course_code,
